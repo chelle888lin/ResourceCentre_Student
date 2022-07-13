@@ -96,11 +96,12 @@ public class ResourceCentreTest {
 	public void testDoLoanCamcorder() {
 
 		//boundary
-		assertNotNull("test if there is valid Camcorder arraylist to loan from", camcorderList);
+		assertNotNull("Test if there is valid Camcorder arraylist to loan from", camcorderList);
+		
 		
 		ResourceCentre.addCamcorder(camcorderList, cc1);
-		
-		// normal
+				
+		//normal
 		Boolean ok = ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "8-8-2020" );
 		assertTrue("Test if an available item is ok to loan?", ok);
 		assertFalse(camcorderList.get(0).getIsAvailable());
