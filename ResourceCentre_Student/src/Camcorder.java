@@ -12,8 +12,8 @@ private int opticalZoom;
 	}
 	
 	public String toString(){
-		String output = "";
-		// Write your codes here
+		String output = String.format("%-10s %-30s %-10s %-10s %-20d\n", super.getAssetTag(), super.getDescription(), 
+				 super.showAvailability(getIsAvailable())+"", super.getDueDate(), this.getOpticalZoom());
 		return output;
 	}
 }

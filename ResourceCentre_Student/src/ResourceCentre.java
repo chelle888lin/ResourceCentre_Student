@@ -113,27 +113,12 @@ public class ResourceCentre {
 		Helper.line(80, "-");
 	}
 
-	public static String showAvailability(boolean isAvailable) {
-		String avail;
-
-		if (isAvailable == true) {
-			avail = "Yes";
-		} else {
-			avail = "No";
-		}
-		return avail;
-	}
-
 	//================================= Option 1 View items (CRUD- Read) =================================
 	public static String retrieveAllCamcorder(ArrayList<Camcorder> camcorderList) {
 		String output = "";
-
+		
 		for (int i = 0; i < camcorderList.size(); i++) {
-
-			output += String.format("%-10s %-30s %-10s %-10s %-20d\n", camcorderList.get(i).getAssetTag(),
-					camcorderList.get(i).getDescription(), 
-					ResourceCentre.showAvailability(camcorderList.get(i).getIsAvailable()),
-					camcorderList.get(i).getDueDate(),camcorderList.get(i).getOpticalZoom());
+			output += camcorderList.get(i).toString();
 		}
 		return output;
 	}
@@ -141,7 +126,7 @@ public class ResourceCentre {
 		ResourceCentre.setHeader("CAMCORDER LIST");
 		String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ASSET TAG", "DESCRIPTION",
 				"AVAILABLE", "DUE DATE","OPTICAL ZOOM");
-		 output += retrieveAllCamcorder(camcorderList);	
+		output += retrieveAllCamcorder(camcorderList);	
 		System.out.println(output);
 	}
 
@@ -149,11 +134,7 @@ public class ResourceCentre {
 		String output = "";
 		
 		for (int i = 0; i < chromebookList.size(); i++) {
-
-			output += String.format("%-10s %-30s %-10s %-10s %-20s\n", chromebookList.get(i).getAssetTag(),
-					chromebookList.get(i).getDescription(), 
-					ResourceCentre.showAvailability(chromebookList.get(i).getIsAvailable()),
-					chromebookList.get(i).getDueDate(), chromebookList.get(i).getOs());
+			output += chromebookList.get(i).toString();
 		}
 		return output;
 	}

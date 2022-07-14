@@ -201,8 +201,8 @@ public class ResourceCentreTest {
 		//error
 		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0013");
 		assertFalse("Test if non-existing amcorder CC0013 is returned - false?", isReturned);
-		
 	}
+	
 	@Test
 	public void testDoReturnChromebook() {
 		//boundary
